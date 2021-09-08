@@ -8,12 +8,11 @@ const statusHeight = Platform.OS === 'ios' ? Constants.statusBarHeight : 0;
 function Status() {
     // Initializing state to track newtwork connectivity
     // and rendering status bar based on these state
-    const [isConnected, setIsConnected] = useState(false);
+    const [isConnected, setIsConnected] = useState(true);
     const [networkType, setNetworkType] = useState('none');
 
     useEffect(() => {
         const handleNetworkChange = (state) => {
-            console.log(JSON.stringify(state));
             setIsConnected(state.isConnected);
             setNetworkType(state.type);
         };
